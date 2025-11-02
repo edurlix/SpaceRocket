@@ -8,7 +8,7 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     1000
 );
-camera.position.z = 10;
+camera.position.z = 300;
 
 // 2. Renderer (with anti-aliasing, Tone Mapping, and shadows)
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -24,7 +24,8 @@ document.body.appendChild(renderer.domElement);
 
 // 3. Controls
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.minDistance = 0.01;
+controls.minDistance = 0.001;
+controls.enablePan = true;
 
 // 4. Lighting (Combines HDRI for reflections and Directional for shadows)
 const ambientLight = new THREE.AmbientLight(0xEEEEEE, 0.8);
